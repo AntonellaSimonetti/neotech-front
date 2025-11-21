@@ -1,0 +1,65 @@
+:root {
+  --color-bg: #0a0a0a;
+  --color-bg-light: #1b1b1b;
+
+  --color-primary: #4cc9f0; 
+  --color-accent: #ffcc66; 
+
+  --color-text: #f5f5f5;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-card: rgba(255, 255, 255, 0.05);
+
+  --font-main: "Poppins", sans-serif;
+
+  --shadow-primary: 0 0 10px rgba(76, 201, 240, 0.3);
+  --shadow-card: 0 0 20px rgba(76, 201, 240, 0.3);
+}
+
+
+
+.header {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-main);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-shadow: var(--shadow-primary);
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+.logo .accent {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}
+
