@@ -1,5 +1,5 @@
 import Header from "./components/header/header.jsx";
-import NavBar from "./components/NavBar/NavBar.jsx";
+import { Footer } from "./components/Footer/Footer.jsx";
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -8,6 +8,7 @@ export default function App() {
   return (
     <Router>
       <Header />
+      
 
 
       <Routes>
@@ -17,6 +18,10 @@ export default function App() {
         <Route path="/login" element={<h1>Login</h1>} />
         <Route path="/register" element={<h1>Registro</h1>} />
       </Routes>
+      <Footer />
     </Router>
+
+    
+
   );
 }

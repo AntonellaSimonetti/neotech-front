@@ -157,3 +157,22 @@ html, body {
 }
 
 
+footer.footer {
+  background-color: #1e1e1e;
+  color: #ccc;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer.footer span {
+  color: #4cc9f0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer.footer span:hover {
+  color: #a0e9ff;
+}
