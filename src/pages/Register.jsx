@@ -29,12 +29,13 @@ export default function Register() {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-card">
+    <div className="auth-container">
+      <div className="auth-card">
         <h2>Crear Cuenta</h2>
 
         <form onSubmit={handleSubmit}>
           <input
+            className="auth-input"
             type="text"
             name="nombre"
             placeholder="Nombre completo"
@@ -43,6 +44,7 @@ export default function Register() {
           />
 
           <input
+            className="auth-input"
             type="email"
             name="email"
             placeholder="Correo electrónico"
@@ -51,6 +53,7 @@ export default function Register() {
           />
 
           <input
+            className="auth-input"
             type="password"
             name="password"
             placeholder="Contraseña"
@@ -58,15 +61,15 @@ export default function Register() {
             onChange={handleChange}
           />
 
-          {error && <p className="login-error">{error}</p>}
-          {msg && <p className="login-success">{msg}</p>}
+          {error && <p className="auth-error">{error}</p>}
+          {msg && <p className="auth-success">{msg}</p>}
 
-          <button type="submit" disabled={loading}>
-            {loading ? "Creando cuenta..." : "Registrarse"}
+          <button className="auth-btn" type="submit" disabled={loading}>
+            {loading ? "Creando…" : "Registrarse"}
           </button>
         </form>
 
-        <p className="login-register-link">
+        <p className="auth-link">
           ¿Ya tenés cuenta?
           <Link to="/login"> Iniciar sesión</Link>
         </p>
