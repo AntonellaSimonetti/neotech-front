@@ -1,0 +1,68 @@
+/* Contenedor general */
+.menu-container {
+  position: relative;
+}
+
+/* Botón principal */
+.menu-button,
+.btn-login {
+  background-color: #047857; /* emerald-700 */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-button:hover,
+.btn-login:hover {
+  background-color: #059669; /* emerald-600 */
+}
+
+/* Dropdown */
+.menu-dropdown {
+  position: absolute;
+  right: 0;
+  margin-top: 8px;
+  width: 190px;
+  background: white;
+  color: #374151; /* gray-700 */
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 20;
+}
+
+/* Elemento dentro del menú */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #374151;
+  font-size: 14px;
+}
+
+.menu-item:hover {
+  background-color: #f3f4f6; /* gray-100 */
+}
+
+/* Iconos */
+.menu-item .icon {
+  margin-right: 4px;
+}
+
+/* Botón salir */
+.btn-logout {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 10px 14px;
+}

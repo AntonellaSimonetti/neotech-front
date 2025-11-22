@@ -1,0 +1,19 @@
+/* flex gap-4 px-4 py-2 items-center */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;           /* gap-4 */
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+}
+
+/* text-gray-300 hover:text-emerald-400 px-4 */
+.nav-link {
+  color: #d1d5db;        /* gray-300 */
+  text-decoration: none;
+  padding: 0.25rem 0.5rem; /* MÁS CHICO que px-4 */
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #34d399;        /* emerald-400 */
+}
