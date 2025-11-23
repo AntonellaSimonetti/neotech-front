@@ -32,7 +32,7 @@ export default function AdminOrders() {
               <td>
                 <select
                   value={order.status}
-                  className="admin-input"
+                  className="admin-select"
                   onChange={(e) =>
                     updateOrderStatus(order._id, e.target.value)
                   }
