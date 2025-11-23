@@ -220,3 +220,64 @@ footer.footer span:hover { color:#a0e9ff; }
   color: var(--color-accent);
   text-shadow: 0 0 5px var(--color-accent);
 }
+
+/*menu del admin*/
+
+.admin-container {
+  padding: 2rem;
+}
+
+.admin-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.admin-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.admin-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: .2s ease;
+  box-shadow: 0 0 12px rgba(76, 201, 240, 0.05);
+}
+
+.admin-card:hover {
+  transform: translateY(-3px);
+}
+
+.admin-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.admin-label {
+  opacity: .8;
+  margin-top: .4rem;
+}
+
+.admin-section-title {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.admin-list {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.admin-list li {
+  margin-bottom: .6rem;
+  opacity: .9;
+}
