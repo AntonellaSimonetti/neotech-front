@@ -35,5 +35,15 @@ export function useProfile() {
     return updated;
   };
 
-  return { profile, loading, updateProfile };
+    const changePassword = async (currentPassword, newPassword) => {
+    const res = await fetch(`${API}/api/profile/password`, {
+      method: "PUT",
+      headers,
+      body: JSON.stringify({ currentPassword, newPassword })
+    });
+
+    return await res.json();
+  };
+
+  return { profile, loading, updateProfile, changePassword };
 }

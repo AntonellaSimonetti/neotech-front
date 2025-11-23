@@ -19,12 +19,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 export default function App() {
   return (
     <Router>
-      {/* 🔹 CONTENEDOR PRINCIPAL */}
       <div className="app-container">
         
         <Header />
 
-        {/* 🔹 EL CONTENIDO OCUPA TODO EL ALTO DISPONIBLE */}
         <div className="app-content">
           <Routes>
             <Route path="/" element={<Home />} />

@@ -25,8 +25,6 @@ footer.footer span:hover {
   text-shadow: 0 0 6px rgba(160, 233, 255, 0.4);
 }
 
-
-
 /* Tablet */
 @media (max-width: 768px) {
   footer.footer {
