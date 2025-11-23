@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
+import ProductModal from "../../components/ProductModal/ProductModal";
 
 export default function Home() {
   const { products, loading, error } = useProducts();
+
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const openModal = (prod) => setSelectedProduct(prod);
+  const closeModal = () => setSelectedProduct(null);
 
   if (loading) return <p className="loading-text">Cargando productos...</p>;
   if (error) return <p className="error-text">{error}</p>;
@@ -23,12 +30,15 @@ export default function Home() {
             <p className="product-price">${prod.precio}</p>
             <p className="product-cat">{prod.categoria}</p>
 
-            <button className="product-btn">
+            <button className="product-btn" onClick={() => openModal(prod)}>
               Ver más
             </button>
           </div>
         ))}
       </div>
+
+      {/* Modal aquí */}
+      <ProductModal product={selectedProduct} onClose={closeModal} />
     </div>
   );
 }
