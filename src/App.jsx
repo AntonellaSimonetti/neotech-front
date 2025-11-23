@@ -8,6 +8,10 @@ import AdminProducts from "./pages/Admin/AdminProducts.jsx";
 import AdminOrders from "./pages/Admin/AdminOrders.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Cart from "./pages/Cart/Cart.jsx";
+import MyOrders from "./pages/User/MyOrders.jsx";
+import Profile from "./pages/User/Profile.jsx";
+import Wishlist from "./pages/User/Wishlist.jsx";
+
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -26,9 +30,9 @@ export default function App() {
         <Route path="/admin/productos" element={<AdminProducts />} />
         <Route path="/admin/ordenes" element={<AdminOrders />} />
         <Route path="/carrito" element={<Cart />} />
-
-
-
+        <Route path="/mis-compras" element={<MyOrders />} />
+        <Route path="/perfil" element={<Profile />} />
+        <Route path="/favoritos" element={<Wishlist />} />
       </Routes>
       <Footer />
     </Router>
