@@ -6,7 +6,7 @@ function FormInput({
   inputType,
   placeholder,
   value,
-  onChangeFn,
+  onChange,
   isRequired = true,
   icon,
 }) {
@@ -23,7 +23,7 @@ function FormInput({
           id={id}
           placeholder={placeholder}
           value={value}
-          onChange={onChangeFn}
+          onChange={onChange}
           required={isRequired}
           className="input contact-textarea"
         />
@@ -33,7 +33,7 @@ function FormInput({
           type={inputType}
           placeholder={placeholder}
           value={value}
-          onChange={onChangeFn}
+          onChange={onChange}
           required={isRequired}
           className="input"
         />

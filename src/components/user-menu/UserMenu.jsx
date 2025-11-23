@@ -3,8 +3,10 @@ import { LogIn, User, LogOut, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./UserMenu.css";
+import { useAuth } from "../context/AuthContext";
 
-function UserMenu({ isLogin, user, logOut }) {
+function UserMenu() {
+  const { user, isLogin, logOut } = useAuth();
   const [open, setOpen] = useState(false);
 
   // Si NO está logueado -> botón Acceder
@@ -22,7 +24,7 @@ function UserMenu({ isLogin, user, logOut }) {
     <div className="menu-container">
       <button onClick={() => setOpen(!open)} className="menu-button">
         <User size={18} />
-        <span>{user?.nombre || "Usuario"}</span>
+        <span>{user?.email || "Usuario"}</span>
       </button>
 
       {open && (

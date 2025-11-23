@@ -1,19 +1,16 @@
 import NavbarBase from "./NavBarBase";
 import UserMenu from "../user-menu/UserMenu";
 import "./NavBar.css";
+import { useAuth } from "../context/AuthContext";
 
-function navBar({ isLogin, isAdmin, user, logOut }) {
+function navBar() {
+  const { user, isLogin, logOut } = useAuth();
   return (
     <div className="navbar-container">
       <NavbarBase />
 
       <div className="navbar-right">
-        <UserMenu
-          isLogin={isLogin}
-          isAdmin={isAdmin}
-          user={user}
-          logOut={logOut}
-        />
+        <UserMenu isLogin={isLogin} user={user} logOut={logOut} />
       </div>
     </div>
   );

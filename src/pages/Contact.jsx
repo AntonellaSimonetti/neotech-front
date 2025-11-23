@@ -49,7 +49,7 @@ export default function Contact() {
             inputType={"text"}
             placeholder={"Juan"}
             value={formData.name}
-            onChangeFn={(e) =>
+            onChange={(e) =>
               setFormData({ ...formData, name: e.target.value })
             }
           />
@@ -60,7 +60,7 @@ export default function Contact() {
             inputType={"email"}
             placeholder={"ejemplo@gmail.com"}
             value={formData.email}
-            onChangeFn={(e) =>
+            onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
           />
@@ -71,7 +71,7 @@ export default function Contact() {
             inputType={"textarea"}
             placeholder={"mensaje"}
             value={formData.message}
-            onChangeFn={(e) =>
+            onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
           />
