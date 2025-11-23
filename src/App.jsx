@@ -3,6 +3,7 @@ import { Footer } from "./components/Footer/footer.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 import MisionVision from "./pages/MisionVision/MisionVision";
+import Contact from "./pages/Contact/Contact";
 
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import AdminProducts from "./pages/Admin/AdminProducts.jsx";
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="/perfil" element={<Profile />} />
             <Route path="/favoritos" element={<Wishlist />} />
             <Route path="/misionvision" element={<MisionVision />} />
+            <Route path="/contacto" element={<Contact />} />
           </Routes>
         </div>
 

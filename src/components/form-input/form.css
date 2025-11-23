@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0a0a0a;
+  --color-card: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-primary: #4cc9f0;
+  --color-accent: #ffcc66;
+  --text-color: #f5f5f5;
+  --font-main: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
+.app-content {
+  padding: 2rem 1rem;
+  min-height: 80vh;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(76, 201, 240, 0.3);
+}
+/* contenedor principal → min-h-screen flex items-center justify-center p-6 */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #f5f5f500;
+}
+
+/* tarjeta → w-full max-w-lg bg-white p-8 rounded-2xl shadow-xl */
+.card {
+  width: 100%;
+  max-width: 32rem;
+   background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)) /* #111827 */;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* título → text-3xl font-bold mb-6 text-center */
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* mensaje de éxito → bg-green-200 text-green-900 p-3 rounded-xl text-center */
+.contact-success {
+  background: #bbf7d0;
+  color: #14532d;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/* formulario → space-y-5 */
+.form > div {
+  margin-bottom: 1.25rem;
+}
+
+/* etiquetas */
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 500;
+}
+
+.label-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* inputs → mt-1 w-full p-2 rounded-lg border bg-gray-800(dark) */
+.input {
+  margin-top: 0.25rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1)) /* #1f2937 */;
+  color:#ffffff;
+}
+
+/* textarea */
+.contact-textarea {
+  height: 8rem;
+}
+
+/* errores → text-red-500 text-sm mt-1 */
+.error-text {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* botón → gradient, px-6 py-3, rounded-lg, hover */
+.button {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background: linear-gradient(to right, #4cc9f0, #4895ef);
+  color: #0f0f0f;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: filter 0.2s ease;
+}
+
+.button:hover {
+  filter: brightness(1.1);
+}
+/* Margen inferior */
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.dark .input {
+  background-color: #1f2937; /* gray-800 */
+  color: white;
+}
+
+/* Texto del final */
+.text-center {
+  text-align: center;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.error-box {
+  margin-bottom: 1rem;            /* mb-4 */
+  padding: 0.75rem;               /* p-3 */
+  border-radius: 0.75rem;         /* rounded-xl */
+  background-color: #fecaca;      /* bg-red-200 */
+  color: #7f1d1d;                 /* text-red-900 */
+  font-size: 0.875rem;            /* text-sm */
+  text-align: center;             /* text-center */
+}
+
+.login-text {
+  margin-top: 1rem;        /* mt-4 */
+  text-align: center;      /* text-center */
+  color: #4b5563;          /* text-gray-600 */
+}
+
+.login-link, .volver-link {
+  color: #4cc9f0;
+  font-weight: 600;       /* font-semibold */
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;   /* hover:underline */
+}
+
+.text-sm {
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+}
+.font-medium {
+   font-weight: 500;
+}
