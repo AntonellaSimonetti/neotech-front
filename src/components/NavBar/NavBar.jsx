@@ -1,10 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthStatus } from "../../hooks/useAuthStatus";
 import "./NavBar.css";
+import { useState } from "react";
 
 export default function NavBar() {
   const { isAdmin, isLogged } = useAuthStatus();
   const navigate = useNavigate();
+
+  const [open, setOpen] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -13,60 +16,71 @@ export default function NavBar() {
     window.location.reload();
   };
 
+  const closeMenu = () => setOpen(false);
+
   return (
-    <nav className="nav-bar">
-      <ul className="nav-menu">
+    <>
+      <div className="hamburger" onClick={() => setOpen(!open)}>
+        ☰
+      </div>
 
-        {/* 🔹 ADMIN */}
-        {isAdmin ? (
-          <>
-            <li><Link className="nav-item" to="/admin">Dashboard</Link></li>
-            <li><Link className="nav-item" to="/admin/productos">Productos</Link></li>
-            <li><Link className="nav-item" to="/admin/ordenes">Órdenes</Link></li>
+      <nav className="nav-bar">
+        <ul className={`nav-menu ${open ? "active" : ""}`}>
 
-            <li className="nav-item" style={{ cursor: "pointer" }} onClick={handleLogout}>
-              Salir
-            </li>
-          </>
-        ) : (
-          <>
-            {/* 🔹 USUARIO NORMAL / PUBLICO */}
-            <li><Link className="nav-item" to="/">Inicio</Link></li>
-            <li><Link className="nav-item" to="/accesorios">Accesorios</Link></li>
-            <li><Link className="nav-item" to="/computadoras">Computadoras</Link></li>
+          {isAdmin ? (
+            <>
+              <li><Link className="nav-item" to="/admin" onClick={closeMenu}>Dashboard</Link></li>
+              <li><Link className="nav-item" to="/admin/productos" onClick={closeMenu}>Productos</Link></li>
+              <li><Link className="nav-item" to="/admin/ordenes" onClick={closeMenu}>Órdenes</Link></li>
 
-            {/* 🔹 SI ESTÁ LOGUEADO → mostrar menú user */}
-            {isLogged ? (
-              <>
-                <li><Link className="nav-item" to="/perfil">Perfil</Link></li>
-                <li><Link className="nav-item" to="/mis-compras">Mis compras</Link></li>
-                <li><Link className="nav-item" to="/favoritos">Favoritos</Link></li>
+              <li
+                className="nav-item"
+                onClick={() => {
+                  closeMenu();
+                  handleLogout();
+                }}
+              >
+                Salir
+              </li>
+            </>
+          ) : (
+            <>
+              <li><Link className="nav-item" to="/" onClick={closeMenu}>Inicio</Link></li>
+              <li><Link className="nav-item" to="/accesorios" onClick={closeMenu}>Accesorios</Link></li>
+              <li><Link className="nav-item" to="/computadoras" onClick={closeMenu}>Computadoras</Link></li>
 
-                <li className="nav-item" style={{ cursor: "pointer" }} onClick={handleLogout}>
-                  Salir
-                </li>
+              {isLogged ? (
+                <>
+                  <li><Link className="nav-item" to="/perfil" onClick={closeMenu}>Perfil</Link></li>
+                  <li><Link className="nav-item" to="/mis-compras" onClick={closeMenu}>Mis Compras</Link></li>
+                  <li><Link className="nav-item" to="/favoritos" onClick={closeMenu}>Favoritos</Link></li>
 
-                <li className="cart-wrapper">
-                  <Link to="/carrito">
-                    <i className="cart-icon">🛒</i>
-                  </Link>
-                </li>
-              </>
-            ) : (
-              <>
-                {/* 🔹 NO logueado */}
-                <li><Link className="nav-item" to="/login">Iniciar sesión</Link></li>
+                  <li
+                    className="nav-item"
+                    onClick={() => {
+                      closeMenu();
+                      handleLogout();
+                    }}
+                  >
+                    Salir
+                  </li>
 
-                <li className="cart-wrapper">
-                  <Link to="/login">
-                    <i className="cart-icon">🛒</i>
-                  </Link>
-                </li>
-              </>
-            )}
-          </>
-        )}
-      </ul>
-    </nav>
+                  <li className="cart-wrapper">
+                    <Link to="/carrito" onClick={closeMenu}>
+                      <i className="cart-icon">🛒</i>
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li><Link className="nav-item" to="/login" onClick={closeMenu}>Iniciar sesión</Link></li>
+
+                </>
+              )}
+            </>
+          )}
+        </ul>
+      </nav>
+    </>
   );
 }

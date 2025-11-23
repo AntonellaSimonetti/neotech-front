@@ -19,25 +19,31 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 export default function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/productos" element={<h1>Productos</h1>} />
-        <Route path="/categorias" element={<h1>Categorías</h1>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/admin/productos" element={<AdminProducts />} />
-        <Route path="/admin/ordenes" element={<AdminOrders />} />
-        <Route path="/carrito" element={<Cart />} />
-        <Route path="/mis-compras" element={<MyOrders />} />
-        <Route path="/perfil" element={<Profile />} />
-        <Route path="/favoritos" element={<Wishlist />} />
-      </Routes>
-      <Footer />
+      {/* 🔹 CONTENEDOR PRINCIPAL */}
+      <div className="app-container">
+        
+        <Header />
+
+        {/* 🔹 EL CONTENIDO OCUPA TODO EL ALTO DISPONIBLE */}
+        <div className="app-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/productos" element={<h1>Productos</h1>} />
+            <Route path="/categorias" element={<h1>Categorías</h1>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/productos" element={<AdminProducts />} />
+            <Route path="/admin/ordenes" element={<AdminOrders />} />
+            <Route path="/carrito" element={<Cart />} />
+            <Route path="/mis-compras" element={<MyOrders />} />
+            <Route path="/perfil" element={<Profile />} />
+            <Route path="/favoritos" element={<Wishlist />} />
+          </Routes>
+        </div>
+
+        <Footer />
+      </div>
     </Router>
-
-    
-
   );
 }
