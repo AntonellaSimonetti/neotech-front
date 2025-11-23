@@ -6,6 +6,7 @@ import Register from "./pages/Register/Register.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import AdminProducts from "./pages/Admin/AdminProducts.jsx";
 import AdminOrders from "./pages/Admin/AdminOrders.jsx";
+import Home from "./pages/Home/Home.jsx";
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,7 +16,7 @@ export default function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<Home />} />
         <Route path="/productos" element={<h1>Productos</h1>} />
         <Route path="/categorias" element={<h1>Categorías</h1>} />
         <Route path="/login" element={<Login />} />
