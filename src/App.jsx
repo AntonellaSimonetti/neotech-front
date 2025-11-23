@@ -5,6 +5,7 @@ import Register from "./pages/Register/Register.jsx";
 
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import AdminProducts from "./pages/Admin/AdminProducts.jsx";
+import AdminOrders from "./pages/Admin/AdminOrders.jsx";
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -21,6 +22,8 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/productos" element={<AdminProducts />} />
+        <Route path="/admin/ordenes" element={<AdminOrders />} />
+
 
       </Routes>
       <Footer />
