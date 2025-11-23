@@ -7,6 +7,7 @@ import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import AdminProducts from "./pages/Admin/AdminProducts.jsx";
 import AdminOrders from "./pages/Admin/AdminOrders.jsx";
 import Home from "./pages/Home/Home.jsx";
+import Cart from "./pages/Cart/Cart.jsx";
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -24,6 +25,8 @@ export default function App() {
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/productos" element={<AdminProducts />} />
         <Route path="/admin/ordenes" element={<AdminOrders />} />
+        <Route path="/carrito" element={<Cart />} />
+
 
 
       </Routes>

@@ -1,31 +1,41 @@
+import { useCart } from "../../hooks/useCart";
+
 export default function ProductModal({ product, onClose }) {
   if (!product) return null;
 
+  const { addToCart } = useCart();
+
+  const handleAddToCart = async () => {
+    await addToCart(product._id);
+    alert("Producto agregado al carrito ✔");
+    onClose();
+  };
+
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         
-        <button className="modal-close" onClick={onClose}>✖</button>
+        <button className="modal-close" onClick={onClose}>
+          ✕
+        </button>
 
-        <img className="modal-img" src={product.imagen} alt={product.nombre} />
+        <img
+          src={product.imagen || "https://via.placeholder.com/400"}
+          alt={product.nombre}
+          className="modal-img"
+        />
 
         <h2 className="modal-title">{product.nombre}</h2>
 
         <p className="modal-desc">{product.descripcion}</p>
+        <p className="modal-price">${product.precio}</p>
 
-        <p className="modal-info">
-          <strong>Precio:</strong> ${product.precio}
-        </p>
+        <p className="modal-cat">Categoría: {product.categoria}</p>
+        <p className="modal-stock">Stock: {product.stock}</p>
 
-        <p className="modal-info">
-          <strong>Categoría:</strong> {product.categoria}
-        </p>
-
-        <p className="modal-info">
-          <strong>Stock:</strong> {product.stock}
-        </p>
-
-        <button className="modal-btn">Agregar al carrito</button>
+        <button className="modal-btn" onClick={handleAddToCart}>
+          Agregar al carrito
+        </button>
       </div>
     </div>
   );

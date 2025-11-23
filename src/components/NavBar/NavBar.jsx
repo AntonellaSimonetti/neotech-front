@@ -38,7 +38,9 @@ export default function NavBar() {
               </li>
             )}
             <li className="cart-wrapper">
+              <Link to="/carrito">
               <i className="cart-icon">🛒</i>
+              </Link>
             </li>
           </>
         )}
