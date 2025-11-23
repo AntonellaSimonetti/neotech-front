@@ -1,4 +1,5 @@
 import { useAdminDashboard } from "../../hooks/useAdminDashboard";
+import "./Admin.css";
 
 export default function AdminDashboard() {
   const { stats, loading, error } = useAdminDashboard();

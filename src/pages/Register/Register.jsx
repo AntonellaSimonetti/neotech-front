@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useRegister } from "../../hooks/useRegister";
+import "./Register.css";
 
 export default function Register() {
   const navigate = useNavigate();

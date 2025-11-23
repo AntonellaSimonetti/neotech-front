@@ -1,4 +1,5 @@
 import { useWishlist } from "../../hooks/useWishlist";
+import "./User.css";
 
 export default function Wishlist() {
   const { wishlist, removeFromWishlist } = useWishlist();

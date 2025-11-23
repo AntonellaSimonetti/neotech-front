@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useProfile } from "../../hooks/useProfile";
+import "./User.css";
 
 export default function Profile() {
   const { profile, loading, updateProfile } = useProfile();

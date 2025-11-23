@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
 import ProductModal from "../../components/ProductModal/ProductModal";
+import "./Home.css";
 
 export default function Home() {
   const { products, loading, error } = useProducts();
@@ -37,7 +38,6 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Modal aquí */}
       <ProductModal product={selectedProduct} onClose={closeModal} />
     </div>
   );

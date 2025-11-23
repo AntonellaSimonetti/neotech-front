@@ -1,4 +1,5 @@
 import { useAdminOrders } from "../../hooks/useAdminOrders";
+import "./Admin.css";
 
 export default function AdminOrders() {
   const { orders, loading, error, updateOrderStatus } = useAdminOrders();

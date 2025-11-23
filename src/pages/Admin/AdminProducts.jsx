@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAdminProducts } from "../../hooks/useAdminProducts";
+import "./Admin.css";
 
 export default function AdminProducts() {
   const { products, loading, error, createProduct, updateProduct, deleteProduct } = useAdminProducts();

@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthStatus } from "../../hooks/useAuthStatus";
+import "./NavBar.css";
 
 export default function NavBar() {
   const { isAdmin, isLogged } = useAuthStatus();

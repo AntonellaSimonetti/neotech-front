@@ -1,0 +1,271 @@
+/*menu del admin*/
+
+.admin-container {
+  padding: 2rem;
+}
+
+.admin-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.admin-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.admin-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: .2s ease;
+  box-shadow: 0 0 12px rgba(76, 201, 240, 0.05);
+}
+
+.admin-card:hover {
+  transform: translateY(-3px);
+}
+
+.admin-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.admin-label {
+  opacity: .8;
+  margin-top: .4rem;
+}
+
+.admin-section-title {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.admin-list {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.admin-list li {
+  margin-bottom: .6rem;
+  opacity: .9;
+}
+
+/*productos admin */
+
+.admin-container {
+  padding: 2rem;
+  color: var(--text-color);
+}
+
+.admin-title {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.admin-subtitle {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: var(--color-accent);
+}
+
+/* FORM */
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: var(--color-card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+.admin-input {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+}
+
+.admin-btn {
+  grid-column: span 2;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border: none;
+  color: #000;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-card);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-table th {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+}
+
+.admin-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.admin-delete-btn {
+  padding: 0.4rem 0.8rem;
+  background: #ff4d4d;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.admin-delete-btn:hover {
+  background: #ff1f1f;
+}
+
+.admin-edit-btn {
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.admin-edit-btn:hover {
+  background: #74d9ff;
+}
+
+/*admin ordenes*/
+
+
+.admin-orders-container {
+  padding: 2rem;
+  color: var(--text-color);
+}
+
+.admin-orders-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-2px);
+}
+
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-card);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.orders-table th {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.orders-table tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+
+.order-status {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-pendiente {
+  background: #ffcc6655;
+  color: var(--color-accent);
+}
+
+.status-pagado {
+  background: #4cc9f055;
+  color: var(--color-primary);
+}
+
+.status-cancelado {
+  background: #ff6b6b55;
+  color: #ff6b6b;
+}
+
+
+.status-btn {
+  padding: 6px 10px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border: none;
+  color: #000;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.status-btn:hover {
+  transform: translateY(-2px);
+}

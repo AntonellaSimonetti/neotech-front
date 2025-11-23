@@ -1,4 +1,5 @@
 import { useCart } from "../../hooks/useCart";
+import "./Cart.css";
 
 export default function Cart() {
   const {

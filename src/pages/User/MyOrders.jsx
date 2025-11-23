@@ -1,4 +1,5 @@
 import { useMyOrders } from "../../hooks/useMyOrders";
+import "./User.css";
 
 export default function MyOrders() {
   const { orders, loading, error } = useMyOrders();

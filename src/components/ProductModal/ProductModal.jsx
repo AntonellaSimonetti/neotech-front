@@ -1,4 +1,5 @@
 import { useCart } from "../../hooks/useCart";
+import "./ProductModal.css";
 
 export default function ProductModal({ product, onClose }) {
   if (!product) return null;
