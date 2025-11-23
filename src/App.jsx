@@ -4,6 +4,8 @@ import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
+import AdminProducts from "./pages/Admin/AdminProducts.jsx";
+
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -18,6 +20,8 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/productos" element={<AdminProducts />} />
+
       </Routes>
       <Footer />
     </Router>
