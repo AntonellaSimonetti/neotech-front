@@ -1,7 +1,8 @@
 import Header from "./components/Header/Header.jsx";
-import { Footer } from "./components/Footer/Footer.jsx";
+import { Footer } from "./components/Footer/footer.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
+import MisionVision from "./pages/MisionVision/MisionVision";
 
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import AdminProducts from "./pages/Admin/AdminProducts.jsx";
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/mis-compras" element={<MyOrders />} />
             <Route path="/perfil" element={<Profile />} />
             <Route path="/favoritos" element={<Wishlist />} />
+            <Route path="/misionvision" element={<MisionVision />} />
           </Routes>
         </div>
 
