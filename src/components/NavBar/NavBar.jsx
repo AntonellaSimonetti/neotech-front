@@ -1,0 +1,86 @@
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthStatus } from "../../hooks/useAuthStatus";
+import "./NavBar.css";
+import { useState } from "react";
+
+export default function NavBar() {
+  const { isAdmin, isLogged } = useAuthStatus();
+  const navigate = useNavigate();
+
+  const [open, setOpen] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/");
+    window.location.reload();
+  };
+
+  const closeMenu = () => setOpen(false);
+
+  return (
+    <>
+      <div className="hamburger" onClick={() => setOpen(!open)}>
+        ☰
+      </div>
+
+      <nav className="nav-bar">
+        <ul className={`nav-menu ${open ? "active" : ""}`}>
+
+          {isAdmin ? (
+            <>
+              <li><Link className="nav-item" to="/admin" onClick={closeMenu}>Dashboard</Link></li>
+              <li><Link className="nav-item" to="/admin/productos" onClick={closeMenu}>Productos</Link></li>
+              <li><Link className="nav-item" to="/admin/ordenes" onClick={closeMenu}>Órdenes</Link></li>
+
+              <li
+                className="nav-item"
+                onClick={() => {
+                  closeMenu();
+                  handleLogout();
+                }}
+              >
+                Salir
+              </li>
+            </>
+          ) : (
+            <>
+              <li><Link className="nav-item" to="/" onClick={closeMenu}>Inicio</Link></li>
+              <li><Link className="nav-item" to="/accesorios" onClick={closeMenu}>Accesorios</Link></li>
+              <li><Link className="nav-item" to="/computadoras" onClick={closeMenu}>Computadoras</Link></li>
+
+              {isLogged ? (
+                <>
+                  <li><Link className="nav-item" to="/perfil" onClick={closeMenu}>Perfil</Link></li>
+                  <li><Link className="nav-item" to="/mis-compras" onClick={closeMenu}>Mis Compras</Link></li>
+                  <li><Link className="nav-item" to="/favoritos" onClick={closeMenu}>Favoritos</Link></li>
+
+                  <li
+                    className="nav-item"
+                    onClick={() => {
+                      closeMenu();
+                      handleLogout();
+                    }}
+                  >
+                    Salir
+                  </li>
+
+                  <li className="cart-wrapper">
+                    <Link to="/carrito" onClick={closeMenu}>
+                      <i className="cart-icon">🛒</i>
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li><Link className="nav-item" to="/login" onClick={closeMenu}>Iniciar sesión</Link></li>
+
+                </>
+              )}
+            </>
+          )}
+        </ul>
+      </nav>
+    </>
+  );
+}
