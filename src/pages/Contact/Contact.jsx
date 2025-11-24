@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, User, MessageSquare } from "lucide-react";
+import "./Contact.css";
 
 import FormInput from "../../components/form-input/FormInput";
 
@@ -34,15 +35,15 @@ export default function Contact() {
   }
 
   return (
-    <div className="page">
-      <div className="card">
-        <h1 className="title">Contacto</h1>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>Contacto</h2>
 
         {sent && (
-          <div className="contact-success">¡Mensaje enviado correctamente!</div>
+          <div className="auth-success">¡Mensaje enviado correctamente!</div>
         )}
 
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} >
           <FormInput
             icon={<User size={18} />}
             labelText={"Nombre"}
@@ -76,7 +77,7 @@ export default function Contact() {
             }
           />
 
-          <button type="submit" className="button">
+          <button type="submit" className="auth-btn">
             Enviar mensaje
           </button>
         </form>

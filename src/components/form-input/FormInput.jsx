@@ -25,7 +25,7 @@ function FormInput({
           value={value}
           onChange={onChange}
           required={isRequired}
-          className="input contact-textarea"
+          className="auth-input"
         />
       ) : (
         <input
@@ -35,7 +35,7 @@ function FormInput({
           value={value}
           onChange={onChange}
           required={isRequired}
-          className="input"
+          className="auth-input"
         />
       )}
     </div>
