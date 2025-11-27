@@ -34,9 +34,13 @@ export function useWishlist() {
     fetchWishlist();
   };
 
+   const isInWishlist = (productId) => {
+    return wishlist.some((p) => p._id === productId);
+  };
+
   useEffect(() => {
     fetchWishlist();
   }, []);
 
-  return { wishlist, addToWishlist, removeFromWishlist };
+  return { wishlist, addToWishlist, removeFromWishlist,isInWishlist  };
 }

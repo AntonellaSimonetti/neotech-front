@@ -64,6 +64,10 @@ export default function Cart() {
           <h2 className="cart-total">Total: ${total}</h2>
 
           <button className="cart-clear" onClick={clearCart}>
+            Continuar Compra
+          </button>
+
+          <button className="cart-clear" onClick={clearCart}>
             Vaciar carrito
           </button>
         </>

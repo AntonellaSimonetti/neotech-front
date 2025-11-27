@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
 import ProductModal from "../../components/ProductModal/ProductModal";
 import "./Home.css";
+import { useWishlist } from "../../hooks/useWishlist";
+import { Heart, HeartOff } from "lucide-react";
 
 export default function Home() {
   const { products, loading, error } = useProducts();
@@ -10,6 +12,7 @@ export default function Home() {
 
   const openModal = (prod) => setSelectedProduct(prod);
   const closeModal = () => setSelectedProduct(null);
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
 
   if (loading) return <p className="loading-text">Cargando productos...</p>;
   if (error) return <p className="error-text">{error}</p>;
@@ -19,7 +22,7 @@ export default function Home() {
       <h1 className="home-title">Productos disponibles</h1>
 
       <div className="products-grid">
-        {products.map(prod => (
+        {products.map((prod) => (
           <div key={prod._id} className="product-card">
             <img
               src={prod.imagen || "https://via.placeholder.com/200"}
@@ -34,6 +37,23 @@ export default function Home() {
             <button className="product-btn" onClick={() => openModal(prod)}>
               Ver más
             </button>
+
+            <div className="fav-btn-wrapper">
+              <button
+                className="fav-btn"
+                onClick={() =>
+                  isInWishlist(prod._id)
+                    ? removeFromWishlist(prod._id)
+                    : addToWishlist(prod._id)
+                }
+              >
+                {isInWishlist(prod._id) ? (
+                  <HeartOff size={20} color="#ff4d4d" />
+                ) : (
+                  <Heart size={20} color="#fff" />
+                )}
+              </button>
+            </div>
           </div>
         ))}
       </div>

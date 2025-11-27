@@ -69,3 +69,20 @@
 .product-btn:hover {
   transform: translateY(-2px);
 }
+.fav-btn-wrapper {
+  margin-top: 10px;
+}
+
+.fav-btn {
+  background: #222;
+  border: 1px solid #555;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.fav-btn:hover {
+  background: #333;
+  transform: scale(1.07);
+}
