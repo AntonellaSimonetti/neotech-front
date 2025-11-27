@@ -89,6 +89,15 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
+                <Link
+                  className="nav-item"
+                  to="/misionvision"
+                  onClick={closeMenu}
+                >
+                  Acerca de...
+                </Link>
+              </li>
+              <li>
                 <Link className="nav-item" to="/contacto" onClick={closeMenu}>
                   Contacto
                 </Link>
