@@ -11,7 +11,7 @@ export default function AdminOrders() {
     <div className="admin-container">
       <h1 className="admin-title">Gestión de Órdenes</h1>
 
-      {/* 🖥️ TABLA DESKTOP */}
+      {/* vista escritorio */}
       <table className="admin-table admin-table-desktop">
         <thead>
           <tr>
@@ -50,7 +50,7 @@ export default function AdminOrders() {
         </tbody>
       </table>
 
-      {/* 📱 VERSION MOBILE – CARDS */}
+      {/* vista mobile */}
       <div className="orders-mobile-list">
         {orders.map(order => (
           <div className="order-card-mobile" key={order._id}>

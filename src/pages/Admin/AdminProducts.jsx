@@ -57,7 +57,6 @@ export default function AdminProducts() {
     <div className="admin-container">
       <h1 className="admin-title">Gestión de Productos</h1>
 
-      {/* FORMULARIO */}
       <form className="admin-form" onSubmit={handleSubmit}>
         <input
           name="nombre"
@@ -107,13 +106,12 @@ export default function AdminProducts() {
         </button>
       </form>
 
-      {/* LISTADO */}
       <h2 className="admin-subtitle">Listado de Productos</h2>
 
       {loading && <p>Cargando productos...</p>}
       {error && <p className="auth-error">{error}</p>}
 
-      {/* 🖥️ DESKTOP TABLE */}
+      {/* escritorio*/}
       <table className="admin-table admin-table-desktop">
         <thead>
           <tr>
@@ -155,7 +153,7 @@ export default function AdminProducts() {
         </tbody>
       </table>
 
-      {/* 📱 MOBILE CARDS */}
+      {/* celulares */}
       <div className="products-mobile-list">
         {products.map((p) => (
           <div key={p._id} className="product-card-mobile">

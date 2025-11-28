@@ -3,21 +3,24 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth.js";
 import "./Login.css";
 
-
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { login, error } = useAuth();   
+  const { login, error } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const user = await login(email, password);  
+    const user = await login(email, password);
 
     if (user) {
-      navigate("/");
+      if (user.rol === "admin") {
+        navigate("/admin"); 
+      } else {
+        navigate("/"); 
+      }
     }
   };
 
@@ -45,7 +48,9 @@ export default function Login() {
 
           {error && <p className="auth-error">{error}</p>}
 
-          <button className="auth-btn" type="submit">Entrar</button>
+          <button className="auth-btn" type="submit">
+            Entrar
+          </button>
         </form>
 
         <p className="auth-link">
