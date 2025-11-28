@@ -1,4 +1,3 @@
-import Header from "./components/header/Header.jsx";
 import { Footer } from "./components/footer/Footer.jsx";
 import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register.jsx";
@@ -13,6 +12,7 @@ import Cart from "./pages/cart/Cart.jsx";
 import MyOrders from "./pages/user/MyOrders.jsx";
 import Profile from "./pages/user/Profile.jsx";
 import Wishlist from "./pages/user/Wishlist.jsx";
+import Header from "./components/header/Header.jsx";
 
 
 
