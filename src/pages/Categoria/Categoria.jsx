@@ -5,7 +5,7 @@ import ProductModal from "../../components/ProductModal/ProductModal";
 import "./Categoria.css";
 
 export default function Categoria() {
-  const { categoria } = useParams(); // <- recibe la categoría desde el link
+  const { categoria } = useParams(); 
   const { products, loading, error } = useProducts();
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -15,7 +15,6 @@ export default function Categoria() {
   if (loading) return <p className="loading-text">Cargando productos...</p>;
   if (error) return <p className="error-text">{error}</p>;
 
-  // Filtrar productos según la categoría del link
   const filteredProducts = products.filter((p) => p.categoria === categoria);
 
   return (

@@ -1,4 +1,3 @@
-// ProductModal.jsx
 import { useCart } from "../../hooks/useCart";
 import { useWishlist } from "../../hooks/useWishlist";
 import { X, Heart, ShoppingCart } from "lucide-react";
