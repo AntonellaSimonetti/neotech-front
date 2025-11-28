@@ -1,4 +1,4 @@
-import Header from "./components/header/Header.jsx";
+import Header from "./components/header/header.jsx";
 import { Footer } from "./components/footer/Footer.jsx";
 import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register.jsx";
