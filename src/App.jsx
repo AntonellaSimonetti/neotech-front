@@ -1,11 +1,11 @@
 import Header from "./components/Header/Header.jsx";
-import { Footer } from "./components/Footer/footer.jsx";
+import { Footer } from "./components/Footer/Footer.jsx";
+
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 import MisionVision from "./pages/MisionVision/MisionVision";
 import Contact from "./pages/Contact/Contact";
 import Categoria from "./pages/Categoria/Categoria";
-
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import AdminProducts from "./pages/Admin/AdminProducts.jsx";
 import AdminOrders from "./pages/Admin/AdminOrders.jsx";
