@@ -1,8 +1,7 @@
-
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.95);
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
@@ -11,12 +10,13 @@
   padding: 1rem;
 }
 
-.modal-content {
+
+.modal-card {
   background: var(--color-card);
   border: 1px solid var(--color-border);
   padding: 1.8rem;
   width: 100%;
-  max-width: 480px;
+  max-width: 420px; 
   border-radius: 16px;
   box-shadow: 0 0 25px rgba(76,201,240,0.12);
   animation: fadeIn 0.25s ease;
@@ -25,11 +25,11 @@
 
 .modal-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  font-size: 1.5rem;
+  top: 8px;  
+  right: 8px; 
   background: none;
   border: none;
+  padding: 4px;
   color: var(--text-color);
   cursor: pointer;
   transition: .2s;
@@ -37,15 +37,15 @@
 
 .modal-close:hover {
   color: var(--color-primary);
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .modal-img {
   width: 100%;
-  max-height: 260px;
+  max-height: 230px;
   object-fit: contain;
   border-radius: 12px;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   background: rgba(255,255,255,0.04);
   padding: 0.6rem;
   border: 1px solid var(--color-border);
@@ -53,39 +53,37 @@
 
 .modal-title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: .4rem;
+  margin-bottom: .3rem;
 }
 
 .modal-desc {
   text-align: center;
   opacity: 0.85;
   font-size: 1rem;
-  margin-bottom: .7rem;
+  margin-bottom: .6rem;
 }
 
 .modal-price {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-accent);
-  margin-bottom: 1rem;
+  margin-bottom: .8rem;
 }
 
-.modal-cat,
-.modal-stock {
+.modal-info {
   text-align: center;
   opacity: 0.85;
   font-size: 0.95rem;
 }
 
-
 .modal-btn {
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
   width: 100%;
-  padding: .9rem;
+  padding: .85rem;
   background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
   border: none;
   border-radius: 12px;
@@ -93,6 +91,10 @@
   font-size: 1.05rem;
   font-weight: 700;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
   transition: .2s;
 }
 
@@ -101,19 +103,15 @@
   box-shadow: 0 0 12px rgba(255,255,255,0.12);
 }
 
-
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
+  from { opacity: 0; transform: scale(0.92); }
   to { opacity: 1; transform: scale(1); }
 }
 
-
-@media (max-width: 500px) {
-  .modal-content {
+@media (max-width: 480px) {
+  .modal-card {
+    max-width: 360px;
     padding: 1.4rem;
   }
-
-  .modal-img {
-    max-height: 220px;
-  }
 }
+

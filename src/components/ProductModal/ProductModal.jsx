@@ -1,5 +1,8 @@
+// ProductModal.jsx
 import { useCart } from "../../hooks/useCart";
 import { useWishlist } from "../../hooks/useWishlist";
+import { X, Heart, ShoppingCart } from "lucide-react";
+import toast from "react-hot-toast";
 import "./ProductModal.css";
 
 export default function ProductModal({ product, onClose }) {
@@ -12,30 +15,39 @@ export default function ProductModal({ product, onClose }) {
 
   const handleAddToCart = async () => {
     if (!isLogged) {
-      alert("Tenés que iniciar sesión para agregar al carrito.");
+      toast.error("Tenés que iniciar sesión para agregar al carrito.");
       return;
     }
 
-    await addToCart(product._id);
-    alert("Producto agregado al carrito ✔");
-    onClose();
+    try {
+      await addToCart(product._id);
+      toast.success("Producto agregado al carrito ");
+      onClose();
+    } catch (err) {
+      toast.error("No se pudo agregar al carrito");
+    }
   };
 
-  const handleAddToWishlist = () => {
+  const handleAddToWishlist = async () => {
     if (inWishlist) {
-      alert("Este producto ya está en favoritos ❤");
+      toast("Este producto ya está en favoritos ");
       return;
     }
 
-    addToWishlist(product._id);
-    alert("Agregado a Favoritos ❤");
+    try {
+      await addToWishlist(product._id);
+      toast.success("Agregado a Favoritos ");
+    } catch (err) {
+      toast.error("No se pudo agregar a favoritos");
+    }
   };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-        
-        <button className="modal-close" onClick={onClose}>✕</button>
+        <button className="modal-close" onClick={onClose}>
+          <X size={22} />
+        </button>
 
         <img
           src={product.imagen || "https://via.placeholder.com/400"}
@@ -52,11 +64,13 @@ export default function ProductModal({ product, onClose }) {
         <p className="modal-info">Stock: {product.stock}</p>
 
         <button className="modal-btn" onClick={handleAddToWishlist}>
-          {inWishlist ? "💖 Ya en Favoritos" : "❤️ Agregar a Favoritos"}
+          <Heart size={18} />
+          {inWishlist ? "Ya en Favoritos" : "Agregar a Favoritos"}
         </button>
 
         <button className="modal-btn" onClick={handleAddToCart}>
-          🛒 Agregar al carrito
+          <ShoppingCart size={18} />
+          Agregar al carrito
         </button>
       </div>
     </div>
