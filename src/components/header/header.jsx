@@ -1,5 +1,5 @@
 import "./Header.css";
-import NavBar from "../navBar/NavBar";
+import NavBar from "../navbar/NavBar";
 export default function Header() {
   return (
     <header className="header">
