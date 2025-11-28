@@ -87,7 +87,7 @@ export function useCart() {
 
   const checkout = async () => {
   try {
-    const res = await fetch(`${API}/api/orders/create`, {
+    const res = await fetch(`${API}/api/orders`, {
       method: "POST",
       headers
     });

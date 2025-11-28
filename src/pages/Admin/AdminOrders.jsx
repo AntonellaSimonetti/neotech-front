@@ -11,7 +11,8 @@ export default function AdminOrders() {
     <div className="admin-container">
       <h1 className="admin-title">Gestión de Órdenes</h1>
 
-      <table className="admin-table">
+      {/* 🖥️ TABLA DESKTOP */}
+      <table className="admin-table admin-table-desktop">
         <thead>
           <tr>
             <th>ID</th>
@@ -48,6 +49,37 @@ export default function AdminOrders() {
           ))}
         </tbody>
       </table>
+
+      {/* 📱 VERSION MOBILE – CARDS */}
+      <div className="orders-mobile-list">
+        {orders.map(order => (
+          <div className="order-card-mobile" key={order._id}>
+            
+            <p><strong>ID:</strong> {order._id}</p>
+            <p><strong>Usuario:</strong> {order.user?.email}</p>
+            <p><strong>Total:</strong> ${order.total}</p>
+
+            <div className="mobile-status">
+              <label>Estado:</label>
+              <select
+                value={order.status}
+                className="admin-select"
+                onChange={(e) =>
+                  updateOrderStatus(order._id, e.target.value)
+                }
+              >
+                <option value="pendiente">Pendiente</option>
+                <option value="pagado">Pagado</option>
+                <option value="cancelado">Cancelado</option>
+              </select>
+            </div>
+
+            <p><strong>Fecha:</strong> {new Date(order.createdAt).toLocaleDateString()}</p>
+
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }
