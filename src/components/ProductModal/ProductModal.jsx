@@ -51,12 +51,10 @@ export default function ProductModal({ product, onClose }) {
         <p className="modal-info">Categoría: {product.categoria}</p>
         <p className="modal-info">Stock: {product.stock}</p>
 
-        {/* ❤️ Favoritos */}
         <button className="modal-btn" onClick={handleAddToWishlist}>
           {inWishlist ? "💖 Ya en Favoritos" : "❤️ Agregar a Favoritos"}
         </button>
 
-        {/* 🛒 Carrito */}
         <button className="modal-btn" onClick={handleAddToCart}>
           🛒 Agregar al carrito
         </button>

@@ -29,7 +29,7 @@ export default function NavBar() {
 
           {isAdmin ? (
             <>
-              <li><Link className="nav-item" to="/admin" onClick={closeMenu}>Dashboard</Link></li>
+              <li><Link className="nav-item" to="/admin" onClick={closeMenu}>Estadistica</Link></li>
               <li><Link className="nav-item" to="/admin/productos" onClick={closeMenu}>Productos</Link></li>
               <li><Link className="nav-item" to="/admin/ordenes" onClick={closeMenu}>Órdenes</Link></li>
 

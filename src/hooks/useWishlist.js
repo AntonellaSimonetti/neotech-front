@@ -22,7 +22,7 @@ export function useWishlist() {
     try {
       const res = await fetch(`${API}/api/wishlist`, { headers });
       const data = await res.json();
-      setWishlist(data);  // ← AHORA SI OBJETOS COMPLETOS
+      setWishlist(data);  
     } catch (err) {
       console.log("Error cargando wishlist:", err);
     }
