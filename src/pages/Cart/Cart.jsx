@@ -7,7 +7,8 @@ export default function Cart() {
     loading,
     updateQuantity,
     removeFromCart,
-    clearCart
+    clearCart,
+    checkout
   } = useCart();
 
   if (loading) return <p>Cargando carrito...</p>;
@@ -60,14 +61,18 @@ export default function Cart() {
       ))}
 
       {cart.length > 0 && (
-        <>
-          <h2 className="cart-total">Total: ${total}</h2>
+  <>
+    <h2 className="cart-total">Total: ${total}</h2>
 
-          <button className="cart-clear" onClick={clearCart}>
-            Vaciar carrito
-          </button>
-        </>
-      )}
+    <button className="cart-clear" onClick={clearCart}>
+      Vaciar carrito
+    </button>
+
+    <button className="cart-checkout" onClick={checkout}>
+      Finalizar compra
+    </button>
+  </>
+)}
     </div>
   );
 }

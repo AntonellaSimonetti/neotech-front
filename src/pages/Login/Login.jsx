@@ -8,13 +8,13 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { login, error } = useAuth();   // <--- USAMOS EL HOOK
+  const { login, error } = useAuth();   
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const user = await login(email, password);  // <--- USO REAL
+    const user = await login(email, password);  
 
     if (user) {
       navigate("/");

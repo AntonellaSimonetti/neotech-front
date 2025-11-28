@@ -85,6 +85,29 @@ export function useCart() {
     } catch (err) { console.error(err); }
   };
 
+  const checkout = async () => {
+  try {
+    const res = await fetch(`${API}/api/orders/create`, {
+      method: "POST",
+      headers
+    });
+
+    if (!res.ok) throw new Error("Error al finalizar compra");
+
+    // Limpia carrito luego de generar la orden
+    clearCart();
+
+    alert("Compra realizada con éxito ✔");
+
+    return true;
+
+  } catch (err) {
+    console.error(err);
+    alert("No se pudo completar la compra ❌");
+    return false;
+  }
+};
+
   useEffect(() => {
     fetchCart();
   }, []);
@@ -96,6 +119,7 @@ export function useCart() {
     addToCart,
     updateQuantity,
     removeFromCart,
-    clearCart
+    clearCart,
+    checkout
   };
 }
