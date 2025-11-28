@@ -49,6 +49,7 @@ export default function NavBar() {
               <li><Link className="nav-item" to="/accesorios" onClick={closeMenu}>Accesorios</Link></li>
               <li><Link className="nav-item" to="/computadoras" onClick={closeMenu}>Computadoras</Link></li>
               <li><Link className="nav-item" to="/contacto" onClick={closeMenu}>Contacto</Link></li>
+              <li><Link className="nav-item" to="/favoritos" onClick={closeMenu}>Favoritos</Link></li>
 
               {isLogged ? (
                 <>
