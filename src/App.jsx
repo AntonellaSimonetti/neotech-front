@@ -1,18 +1,18 @@
 import Header from "./components/header/Header.jsx";
-import { Footer } from "./components/Footer/Footer.jsx";
-import Login from "./pages/Login/Login.jsx";
-import Register from "./pages/Register/Register.jsx";
-import MisionVision from "./pages/MisionVision/MisionVision";
-import Contact from "./pages/Contact/Contact";
-import Categoria from "./pages/Categoria/Categoria";
-import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
-import AdminProducts from "./pages/Admin/AdminProducts.jsx";
-import AdminOrders from "./pages/Admin/AdminOrders.jsx";
-import Home from "./pages/Home/Home.jsx";
-import Cart from "./pages/Cart/Cart.jsx";
-import MyOrders from "./pages/User/MyOrders.jsx";
-import Profile from "./pages/User/Profile.jsx";
-import Wishlist from "./pages/User/Wishlist.jsx";
+import { Footer } from "./components/footer/Footer.jsx";
+import Login from "./pages/login/Login.jsx";
+import Register from "./pages/register/Register.jsx";
+import MisionVision from "./pages/misionvision/MisionVision";
+import Contact from "./pages/contact/Contact";
+import Categoria from "./pages/categoria/Categoria";
+import AdminDashboard from "./pages/admin/AdminDashboard.jsx";
+import AdminProducts from "./pages/admin/AdminProducts.jsx";
+import AdminOrders from "./pages/admin/AdminOrders.jsx";
+import Home from "./pages/home/Home.jsx";
+import Cart from "./pages/cart/Cart.jsx";
+import MyOrders from "./pages/user/MyOrders.jsx";
+import Profile from "./pages/user/Profile.jsx";
+import Wishlist from "./pages/user/Wishlist.jsx";
 
 
 
