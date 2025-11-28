@@ -1,0 +1,228 @@
+.user-container {
+  max-width: 950px;
+  margin: 3rem auto;
+  padding: 1.8rem;
+  color: var(--text-color);
+  background: rgba(255,255,255,0.02);
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(76,201,240,0.05);
+}
+
+.user-title {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 14px rgba(76,201,240,0.35);
+  letter-spacing: 0.6px;
+}
+
+.user-subtitle {
+  font-size: 1.35rem;
+  margin: 2.5rem 0 1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  padding-left: 12px;
+  border-left: 3px solid var(--color-accent);
+}
+
+.profile-form {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(76,201,240,.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-group label {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: .4px;
+}
+
+.field-group input {
+  padding: .9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: rgba(255,255,255,.06);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: .2s;
+}
+
+.field-group input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(76,201,240,.4);
+  outline: none;
+}
+
+.user-btn {
+  padding: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4cc9f0, #ffcc66);
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #000;
+  transition: .2s;
+  width: 100%;
+}
+
+.user-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(255,255,255,.18);
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid var(--color-border);
+  padding: 1.8rem;
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba(76,201,240,.06);
+  transition: .25s;
+}
+
+.order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 26px rgba(76,201,240,.18);
+}
+
+.order-card h3 {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: .5rem;
+}
+
+.order-status {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: .4rem;
+}
+
+.order-total {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order-item {
+  display: flex;
+  gap: 1rem;
+  background: rgba(255,255,255,.07);
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  border-radius: 12px;
+  transition: .2s;
+}
+
+.order-item:hover {
+  background: rgba(255,255,255,.10);
+}
+
+.order-img {
+  width: 75px;
+  height: 75px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  transition: .25s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(76,201,240,0.2);
+}
+
+.product-img {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: rgba(255,255,255,0.04);
+}
+
+.admin-delete-btn {
+  margin-top: 0.8rem;
+  padding: .6rem 1rem;
+  background: #ff5f5f;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.admin-delete-btn:hover {
+  background: #ff3b3b;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 650px) {
+
+  .user-container {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .user-title {
+    font-size: 1.8rem;
+  }
+
+  .profile-form {
+    padding: 1.4rem;
+    gap: 1rem;
+  }
+
+  .order-item {
+    flex-direction: column;
+    padding: .9rem;
+  }
+
+  .order-img {
+    width: 90px;
+    height: 90px;
+  }
+}
