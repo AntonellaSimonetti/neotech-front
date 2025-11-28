@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
-import ProductModal from "../../components/productmodal/ProductModal";
+import ProductModal from "../../components/ProductModal/ProductModal";
 import "./Home.css";
 
 export default function Home() {
