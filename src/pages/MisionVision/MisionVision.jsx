@@ -5,7 +5,6 @@ export default function MisionVision() {
       <div className="login-card mv-card">
         <h2 className="mv-title">Misión y Visión</h2>
 
-        {/* Sección Misión */}
         <div className="mv-section">
           <img
             src="https://c.pxhere.com/photos/75/9f/workplace_team_business_meeting_business_people_business_teamwork_office_people-559565.jpg!d"
@@ -25,7 +24,6 @@ export default function MisionVision() {
           </div>
         </div>
 
-        {/* Sección Visión */}
         <div className="mv-section">
           <img
             src="https://get.pxhere.com/photo/desk-writing-play-workspace-biology-office-startup-design-vision-learning-company-homework-postit-ideas-sticky-notes-collaboration-924306.jpg"
@@ -44,8 +42,6 @@ export default function MisionVision() {
             </p>
           </div>
         </div>
-
-        {/* Sección Nosotras */}
         <div className="mv-section">
           <img
             src="https://get.pxhere.com/photo/business-businessman-businesswoman-caucasian-colleagues-communication-conference-connection-copy-space-design-space-device-digital-diversity-documentation-female-files-graph-graphic-hall-ideas-indoor-internet-laptop-male-man-meeting-network-office-pen-phone-planning-plant-pot-projects-screen-startup-statistics-strategy-table-team-teamwork-technology-together-togetherness-venture-water-woman-wooden-work-place-workers-working-netbook-personal-computer-electronic-device-furniture-1443987.jpg"

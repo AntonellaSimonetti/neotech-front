@@ -5,9 +5,13 @@ import ProductModal from "../../components/ProductModal/ProductModal";
 import "./Categoria.css";
 
 export default function Categoria() {
-  const { categoria } = useParams(); 
+  const { categoria } = useParams();
   const { products, loading, error } = useProducts();
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const [search, setSearch] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [order, setOrder] = useState("");
 
   const openModal = (prod) => setSelectedProduct(prod);
   const closeModal = () => setSelectedProduct(null);
@@ -15,15 +19,51 @@ export default function Categoria() {
   if (loading) return <p className="loading-text">Cargando productos...</p>;
   if (error) return <p className="error-text">{error}</p>;
 
-  const filteredProducts = products.filter((p) => p.categoria === categoria);
+  let filtered = products.filter((p) => p.categoria === categoria);
+
+  if (search.trim() !== "") {
+    filtered = filtered.filter((p) =>
+      p.nombre.toLowerCase().includes(search.toLowerCase())
+    );
+  }
+
+  if (maxPrice !== "") {
+    filtered = filtered.filter((p) => p.precio <= Number(maxPrice));
+  }
+
+  if (order === "asc") filtered = filtered.sort((a, b) => a.precio - b.precio);
+  if (order === "desc") filtered = filtered.sort((a, b) => b.precio - a.precio);
 
   return (
     <div className="categoria-container">
-      <h1 className="categoria-title"> {categoria}</h1>
+
+      <h1 className="categoria-title">{categoria}</h1>
+
+      <div className="filtros-container">
+        
+        <input
+          type="text"
+          placeholder="Buscar producto..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="filtro-input"
+        />
+
+        <input
+          type="number"
+          placeholder="Precio máximo"
+          value={maxPrice}
+          onChange={(e) => setMaxPrice(e.target.value)}
+          className="filtro-input"
+        />
+
+
+      </div>
 
       <div className="products-grid">
-        {filteredProducts.map((prod) => (
+        {filtered.map((prod) => (
           <div key={prod._id} className="product-card">
+            
             <img
               src={prod.imagen || "https://via.placeholder.com/200"}
               alt={prod.nombre}
@@ -32,7 +72,6 @@ export default function Categoria() {
 
             <h3 className="product-name">{prod.nombre}</h3>
             <p className="product-price">${prod.precio}</p>
-            <p className="product-cat">{prod.categoria}</p>
 
             <button className="product-btn" onClick={() => openModal(prod)}>
               Ver más
