@@ -1,5 +1,5 @@
 import Header from "./components/header/header.jsx";
-import { Footer } from "./components/footer/Footer.jsx";
+import { Footer } from "./components/Footer/footer.jsx";
 import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register.jsx";
 import MisionVision from "./pages/misionvision/MisionVision";
