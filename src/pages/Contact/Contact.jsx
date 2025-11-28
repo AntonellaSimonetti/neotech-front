@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Mail, User, MessageSquare } from "lucide-react";
 import "./Contact.css";
-
 import FormInput from "../../components/form-input/FormInput";
 
 export default function Contact() {
@@ -10,8 +9,9 @@ export default function Contact() {
     email: "",
     message: "",
   });
-  const [sent, setSent] = useState(false);
+
   const [errors, setErrors] = useState({});
+  const [sent, setSent] = useState(false);
 
   function validate() {
     const newErrors = {};
@@ -21,17 +21,21 @@ export default function Contact() {
       newErrors.email = "Email inválido";
     if (!formData.message.trim())
       newErrors.message = "El mensaje no puede estar vacío";
+
     return newErrors;
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
     const validation = validate();
-    setErrors(validation);
-    if (Object.keys(validation).length === 0) {
-      setSent(true);
-      setFormData({ name: "", email: "", message: "" });
+
+    if (Object.keys(validation).length !== 0) {
+      e.preventDefault();
+      setErrors(validation);
+      return;
     }
+
+    setErrors({});
+    setSent(true);
   }
 
   return (
@@ -40,44 +44,59 @@ export default function Contact() {
         <h2>Contacto</h2>
 
         {sent && (
-          <div className="auth-success">¡Mensaje enviado correctamente!</div>
+          <div className="auth-success">
+            ¡Mensaje enviado correctamente!
+          </div>
         )}
 
-        <form onSubmit={handleSubmit} >
+        <form
+          action="https://formspree.io/f/xkgbnlok"
+          method="POST"
+          onSubmit={handleSubmit}
+        >
           <FormInput
             icon={<User size={18} />}
             labelText={"Nombre"}
             inputType={"text"}
-            placeholder={"Juan"}
+            name="name"
+            placeholder="Juan"
             value={formData.name}
             onChange={(e) =>
               setFormData({ ...formData, name: e.target.value })
             }
           />
+          {errors.name && <p className="auth-error">{errors.name}</p>}
 
           <FormInput
             icon={<Mail size={18} />}
             labelText={"Email"}
             inputType={"email"}
-            placeholder={"ejemplo@gmail.com"}
+            name="email"
+            placeholder="ejemplo@gmail.com"
             value={formData.email}
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
           />
+          {errors.email && <p className="auth-error">{errors.email}</p>}
 
-          <FormInput
-            icon={<MessageSquare size={18} />}
-            labelText={"Mensaje"}
-            inputType={"textarea"}
-            placeholder={"mensaje"}
+          <label className="form-label">
+            <MessageSquare size={18} /> Mensaje
+          </label>
+          <textarea
+            className="form-textarea"
+            name="message"
+            placeholder="Escribe tu mensaje..."
             value={formData.message}
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
           />
+          {errors.message && (
+            <p className="auth-error">{errors.message}</p>
+          )}
 
-          <button type="submit" className="auth-btn">
+          <button className="auth-btn" type="submit">
             Enviar mensaje
           </button>
         </form>
