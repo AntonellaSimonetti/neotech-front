@@ -1,6 +1,5 @@
 import Header from "./components/Header/Header.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
-
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 import MisionVision from "./pages/MisionVision/MisionVision";
