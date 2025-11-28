@@ -19,8 +19,6 @@
   text-shadow: 0 0 18px rgba(76, 201, 240, 0.35);
 }
 
-
-
 .filtros-container {
   width: 100%;
   max-width: 900px;
@@ -114,7 +112,6 @@
   transform: translateY(-2px);
   box-shadow: 0 0 12px rgba(255,255,255,0.15);
 }
-
 
 @media (max-width: 780px) {
 
