@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
 import { useParams } from "react-router-dom";
-import ProductModal from "../../components/productmodal/ProductModal";
+import ProductModal from "../../components/ProductModal/ProductModal";
 import "./Categoria.css";
 
 export default function Categoria() {
